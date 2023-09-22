@@ -122,19 +122,17 @@
                     <div class="container-mid">
                         <div class="container">
                             <h1>İletişim</h1>
-                            <p style="text-align: center;"> Çok yakında iletişim bilgilerimizi paylaşacağız.</p>
+                            <p style="text-align: center;">Bize mail gönder!</p>
                             <form id="contact-form" action="" method="post">
-                                <div class="control-group"> <label class="nameLabel">İsim</label> <input
-                                        id="contact-form-name" type="text" name="name" class="form-control"> </div>
-                                <div class="control-group"> <label class="emailLabel">Email</label> <input
-                                        id="contact-form-email" type="text" name="email" class="form-control"> </div>
+                                <div class="control-group"> <label class="subjectLabel">Konu</label> <input
+                                        id="contact-form-subject" type="text" name="subject" class="form-control"> </div>
                                 <div class="control-group fhp-input"> <label class="phoneLabel">Telefon</label> <input
                                         id="contact-form-phone" type="phone" name="phone" class="form-control"> </div>
                                 <div class="control-group"> <label class="messageLabel">Mesaj</label> <textarea
                                         id="contact-form-message" name="message" class="form-control"></textarea> </div>
-                                <div class="control-group"> <button type="submit" class="form-control"> <i
-                                            class="fa fa-arrow-right first"></i> <i class="fa fa-arrow-right second"></i>
-                                    </button> </div>
+                                <div class="control-group"> <div target="_blank" onclick=(sendMail(this)) type="submit" class="form-control"> <i
+                                            class="fa fa-arrow-right first"></i>
+                                </div> </div>
                             </form>
                         </div>
                     </div>
@@ -150,5 +148,11 @@
         <div class="nav_dots"></div>
     </div>
 </body>
+
+<script type="text/javascript">
+    function sendMail() {
+        window.open(`mailto:mesut@tribochemi.com?subject=${document.getElementById("contact-form-subject").value}&body=${document.getElementById("contact-form-message").value}`, '_blank');
+    }
+</script>
 
 </html>
